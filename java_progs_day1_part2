@@ -1,0 +1,174 @@
+1.// to find whether a given year is leap year not?
+
+package com.th;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+                int year;
+                System.out.println("Enter an Year : ");
+                Scanner sc = new Scanner(System.in);
+                year = sc.nextInt();
+
+                if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+                    System.out.println("Specified year is a leap year");
+                else
+                    System.out.println("Specified year is not a leap year");
+	}
+}
+
+output1:
+Enter an Year : 
+2020
+Specified year is a leap year
+
+output2:
+Enter an Year : 
+2021
+Specified year is not a leap year
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+2.//number is amstrong or not
+
+package com.th;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int num;
+                    Scanner sc= new Scanner(System.in);
+                    System.out.print("Enter the number: ");
+                    num=sc.nextInt();
+                    if(isArmstrong(num))
+                    {
+                        System.out.print("Armstrong ");
+                    }
+                    else
+                    {
+                        System.out.print("Not Armstrong ");
+                    }
+
+		}
+     static boolean isArmstrong(int n)
+    {
+        int temp, digits=0, last=0, sum=0;
+        temp=n;
+        while(temp>0)
+        {
+            temp = temp/10;
+            digits++;
+        }
+        temp = n;
+        while(temp>0)
+        {
+            last = temp % 10;
+            sum +=  (Math.pow(last, digits));
+            temp = temp/10;
+        }
+        if(n==sum)
+            return true;
+        else return false;
+    }
+	
+}
+
+output1:
+Enter the number: 
+12
+Not Armstrong 
+
+output2:
+Enter the number: 
+153
+Armstrong 
+
+----------------------------------------------------------------------------------------------------------------------------
+3.// number is perfect or not
+
+package com.th;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+        System.out.print("Enter number:");
+        int n=s.nextInt();
+        for(int i=1; i <= 10; i++)
+        {
+            System.out.println(n+" * "+i+" = "+n*i);
+        }
+}
+}
+
+output1:
+Enter number:
+5
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+output2:
+Enter number:
+11
+11 * 1 = 11
+11 * 2 = 22
+11 * 3 = 33
+11 * 4 = 44
+11 * 5 = 55
+11 * 6 = 66
+11 * 7 = 77
+11 * 8 = 88
+11 * 9 = 99
+11 * 10 = 110
+---------------------------------------------------------------------------------------------------------------------------------------------------
+5.//LCM and HCF of two given numbers. 
+
+package com.th;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int temp1, temp2, num1, num2, temp, hcf, lcm;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter First Number: ");
+        num1 = scanner.nextInt();
+        System.out.print("Enter Second Number: ");
+        num2 = scanner.nextInt();
+        scanner.close();
+
+        temp1 = num1;
+        temp2 = num2;
+
+        while(temp2 != 0){
+            temp = temp2;
+            temp2 = temp1%temp2;
+            temp1 = temp;
+        }
+
+        hcf = temp1;
+        lcm = (num1*num2)/hcf;
+
+        System.out.println("HCF of input numbers: "+hcf);
+        System.out.println("LCM of input numbers: "+lcm);
+}
+}
+
+output:
+
+Enter First Number: 10
+Enter Second Number: 35
+HCF of input numbers: 5
+LCM of input numbers: 70
