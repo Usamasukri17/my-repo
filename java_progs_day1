@@ -1,0 +1,419 @@
+1.// addition of two numbers ,input from user
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter two numbers:");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        System.out.println("Sum="+(num1+num2));
+}
+}
+
+output1:
+enter two numbers:
+2
+2
+Sum=4
+
+output2:
+enter two numbers:
+3
+4
+Sum=7
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.//program to find even or odd
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+        System.out.println("enter number:");
+        int n = sc.nextInt();
+        if (n % 2 == 0) {
+            System.out.println(n + " is a even");
+        } else {
+            System.out.println(n + " is a odd");
+        }
+     }
+}
+
+output1:
+enter number:
+4
+4 is a even
+
+output2:
+enter number:
+9
+9 is a odd
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.// find largest of the 3 number
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        double n2 = sc.nextDouble();
+        double n3 = sc.nextDouble();
+        double lar1 = (n1>n2)?n1:n2;
+        double lar2 = (lar1>n3)?lar1:n3;
+        System.out.println(lar2+" is the largest");
+	
+       
+     }
+}
+
+output1:
+4
+7
+9.7
+9.7 is the largest
+output2:
+3
+7.23
+7.1
+7.23 is the largest
+
+------------------------------------------------------------------------------------------------------------------------------------
+4.//implicit type casting
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	float f1 = 0.02f;
+        double f2 = f1;
+        System.out.println(f2);
+       
+     }
+}
+
+output:0.019999999552965164
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5.//explicit type casting
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+		double f1 = 0.564f;
+        	float f2 = (float)f1;
+        	System.out.println(f2);
+	
+     }
+}
+
+output:0.564
+-------------------------------------------------------------------------------------------------------------------------------------------
+6.//post increment(i++) pre increment(++i)
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+		int i=10;
+        	System.out.println(i++);
+        	System.out.println(++i);
+		
+	
+     }
+}
+
+output:
+10
+12
+-------------------------------------------------------------------------------------------------------------------------------------------------
+7.//reverse the number
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        	System.out.println("enter the number:");
+        	int num = sc.nextInt();
+        	System.out.println(reverseNumber(num));
+		
+	
+     }
+public static int reverseNumber(int n)
+    {
+        int remainder = 0, reverse = 0;
+        while (n!=0)
+        {
+            remainder = n%10;
+            reverse = (reverse*10)+remainder;
+            n = n/10;
+        }
+            return reverse;
+    }
+
+}
+
+outplut1:
+enter the number:
+4567
+7654
+
+output2:
+enter the number:
+8907
+7098
+-------------------------------------------------------------------------------------------------------------------------------------------
+8.// calculate factorial
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number:");
+        int num = sc.nextInt();
+        System.out.println("the factorial of "+num+" is "+factorial(num));
+	}
+    public static int factorial(int n)
+    {
+        int fact=1;
+        for(int i=1;i<=n;i++)
+        {
+            fact=fact*i;
+        }
+        return fact;
+    }
+}
+
+
+output1:
+enter the number:
+5
+the factorial of 5 is 120
+
+output2:
+enter the number:
+10
+the factorial of 10 is 3628800
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+9.//find number of days in month
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+        System.out.println("enter the month number:");
+        int mno = sc.nextInt();
+        String msg = tofinddays(mno);
+        System.out.println("the month no.  "+mno+"  "+msg);
+	}
+    public static String tofinddays(int mno)
+{     String msg="";
+    switch(mno) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            msg = "has 31 days";
+            break;
+        case 2:
+            msg = "has 28 or 29 days";
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            msg = " has 30 days";
+            break;
+        default:
+            msg = "invalid month no.";
+    }
+    return msg;
+}
+	
+}
+
+
+
+output1:
+enter the month number:
+2
+the month no.  2  has 28 or 29 days
+
+output2:
+enter the month number:
+1
+the month no.  1  has 31 days
+
+output3:
+enter the month number:
+4
+the month no.  4   has 30 days
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+10.// prime or not
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter  a  integer value : ");
+        int num = sc.nextInt();
+        if (isPrime(num))
+            System.out.println("the number is prime");
+        else
+            System.out.println("the number is not prime");
+		
+	
+     }
+    public static boolean isPrime(int num)
+    {
+        boolean  flag = true;
+        for (int i=2;i<=(num/2);i++)
+        {
+            if (num %i == 0)
+            {
+                flag =false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+}
+
+
+output1:
+Enter  a  integer value : 
+33
+the number is not prime
+
+output2:
+Enter  a  integer value : 
+2
+the number is prime
+
+output3:
+Enter  a  integer value : 
+17
+the number is prime
+------------------------------------------------------------------------------------------------------------------------------------------------------
+11.//printing the elements of array
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	int[] arr = {10, 20, 30, 40, 50};
+        System.out.println("printing thr elements of array");
+        for (int i = 0; i < arr.length; i++) 
+	{
+            System.out.println(arr[i]);
+        }
+	
+    }
+}
+
+output:
+printing thr elements of array
+10
+20
+30
+40
+50
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+12.//input from user and displaying it
+
+package com.th;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+        System.out.println("enter the elements:");
+        int sum=0;
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("enter the array elements");
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+            sum=sum+arr[i];
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
+        System.out.println(sum);
+
+    }
+}
+
+
+output:
+enter the elements:
+5
+enter the array elements
+10
+20
+30
+40
+50
+10
+20
+30
+40
+50
+150
